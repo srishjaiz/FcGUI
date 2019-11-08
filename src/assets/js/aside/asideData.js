@@ -1092,9 +1092,9 @@ const mscolumn2d = {
 
 const caption = {
   captionText: [{
-    label: 'Heading',
+    label: 'Text',
     inputFieldType: 'text',
-    placeholder: 'My Heading',
+    placeholder: 'Enter heading here',
     value: '',
     id: 'caption_caption',
     note: '',
@@ -1163,16 +1163,16 @@ const caption = {
     value: '',
     location:'chart',
     id: 'caption_alignCaptionWithCanvas',
-    note: 'Align heading with plot area or with the whole chart area',
+    note: 'Align heading with chart',
     defaultActive: '1'
   },
 ],
   captionPosition: [{
-    label: 'Position',
+    label: 'Is On Top',
     inputFieldType: "checkbox",
     value: '',
     id: 'caption_captionOnTop',
-    note: '',
+    note: 'Places the heading either on top or bottom of the chart',
     location:'chart',
     defaultActive: '1'
   }, ],
@@ -1189,9 +1189,9 @@ const caption = {
 }
 const subCaption = {
   subCaptionText: [{
-    label: 'Sub-Heading',
+    label: 'Text',
     inputFieldType: 'text',
-    placeholder: 'My Sub Heading',
+    placeholder: 'Enter sub heading here',
     value: '',
     id: 'caption_subCaption',
     note: '',
@@ -1550,45 +1550,45 @@ const chartDS = {
     },
   ],
 
-  captionAlignment: [{
-      label: 'Alignment',
-      inputFieldType: "select",
-      selectValues: ["left", "center", "right"],
-      placeholder: 'center',
-      value: '',
-      id: 'caption_captionAlignment',
-      note: '',
-      defaultActive: '1',
-      // willActivate: function () {
-      //   // document.getElementById(this.id).addEventListener('change', handleInputs.bind(null, ['caption_captionHorizontalPadding']))
-      // }
-    },
-    {
-      label: 'Alignment wrt Plot Area',
-      inputFieldType: "checkbox",
-      value: '',
-      id: 'caption_alignCaptionWithCanvas',
-      note: 'Align heading with plot area or with the whole chart area',
-      defaultActive: '1'
-    },
-  ],
-  captionPosition: [{
-    label: 'Position',
-    inputFieldType: "checkbox",
-    value: '',
-    id: 'caption_captionOnTop',
-    note: '',
-    defaultActive: '1'
-  }, ],
-  captionPadding: [{
-    label: 'Padding',
-    inputFieldType: "number",
-    placeholder: '30',
-    value: '',
-    id: 'caption_captionHorizontalPadding',
-    note: 'Applicable only for left and right alignment',
-    defaultActive: '1',
-  }, ],
+  // captionAlignment: [{
+  //     label: 'Alignment',
+  //     inputFieldType: "select",
+  //     selectValues: ["left", "center", "right"],
+  //     placeholder: 'center',
+  //     value: '',
+  //     id: 'caption_captionAlignment',
+  //     note: '',
+  //     defaultActive: '1',
+  //     // willActivate: function () {
+  //     //   // document.getElementById(this.id).addEventListener('change', handleInputs.bind(null, ['caption_captionHorizontalPadding']))
+  //     // }
+  //   },
+  //   {
+  //     label: 'Alignment wrt Plot Area',
+  //     inputFieldType: "checkbox",
+  //     value: '',
+  //     id: 'caption_alignCaptionWithCanvas',
+  //     note: 'Align heading with plot area or with the whole chart area',
+  //     defaultActive: '1'
+  //   },
+  // ],
+  // captionPosition: [{
+  //   label: 'On Top/ Bottom',
+  //   inputFieldType: "checkbox",
+  //   value: '',
+  //   id: 'caption_captionOnTop',
+  //   note: '',
+  //   defaultActive: '1'
+  // }, ],
+  // captionPadding: [{
+  //   label: 'Padding',
+  //   inputFieldType: "number",
+  //   placeholder: '30',
+  //   value: '',
+  //   id: 'caption_captionHorizontalPadding',
+  //   note: 'Applicable only for left and right alignment',
+  //   defaultActive: '1',
+  // }, ],
 
   "logo": [{
       "label": "SourceLink",
@@ -1741,7 +1741,7 @@ const column2d = {
     }
   },
   'dataplot': {
-    'name': 'DataPlot',
+    'name': 'Data Plot',
     'properties': {
       'chart': dataplot['chart'],
       'data': dataplot['data'],
@@ -1749,7 +1749,7 @@ const column2d = {
     }
   }, 
   'plotValue': {
-    'name': 'DataValue',
+    'name': 'Data Value',
     'properties': {
       'features': plotValue['features'],
       'font': plotValue['font'],
@@ -1758,20 +1758,20 @@ const column2d = {
     }
   },
   'caption': {
-    'name': 'Caption',
+    'name': 'Heading',
     'properties': {
-      'captionText': caption['captionText'],
-      'captionFont': caption['captionFont'],
-      'captionAlignment': caption['captionAlignment'],
-      'captionPosition': caption['captionPosition'],
-      'captionPadding': caption['captionPadding'],
+      'Heading': caption['captionText'],
+      'Heading Font': caption['captionFont'],
+      'Heading Alignment': caption['captionAlignment'],
+      'Heading Position': caption['captionPosition'],
+      'Heading Padding': caption['captionPadding'],
     }
   },
   'subcaption': {
-    'name': 'Sub Caption',
+    'name': 'Sub Heading',
     'properties': {
-      'subCaptionText': subCaption['subCaptionText'],
-      'subCaptionFont': subCaption['subCaptionFont']
+      'Sub Heading': subCaption['subCaptionText'],
+      'Sub Heading Font': subCaption['subCaptionFont']
     }
   },
   'chartDS': {
@@ -1793,19 +1793,45 @@ const column2d = {
   }
 }
 const area2d = {
-  'canvas': column2d['canvas']
+  'canvas': column2d['canvas'],
+  'dataplot': column2d['dataplot'],
+  'plotValue': column2d['plotValue'],
+  'caption': column2d['caption'],
+  'subcaption': column2d['subcaption'],
+  'chartDS': column2d['chartDS'],
 }
 
 const bar2d = {
-  'canvas': column2d['canvas']
+  'canvas': column2d['canvas'],
+  'dataplot': column2d['dataplot'],
+  'plotValue': column2d['plotValue'],
+  'caption': column2d['caption'],
+  'subcaption': column2d['subcaption'],
+  'chartDS': column2d['chartDS'],
 }
 
 const line = {
-  'canvas': column2d['canvas']
+  'canvas': column2d['canvas'],
+  'dataplot': column2d['dataplot'],
+  'plotValue': column2d['plotValue'],
+  'caption': column2d['caption'],
+  'subcaption': column2d['subcaption'],
+  'chartDS': column2d['chartDS'],
 }
 const pie2d = {
-  'canvas': {
-    'name': 'Plot Area',
-    'margin': canvas['margin']
-  }
+  'canvas': column2d['canvas'],
+  'dataplot': column2d['dataplot'],
+  'plotValue': column2d['plotValue'],
+  'caption': column2d['caption'],
+  'subcaption': column2d['subcaption'],
+  'chartDS': column2d['chartDS'],
+}
+
+const pie3d = {
+  'canvas': column2d['canvas'],
+  'dataplot': column2d['dataplot'],
+  'plotValue': column2d['plotValue'],
+  'caption': column2d['caption'],
+  'subcaption': column2d['subcaption'],
+  'chartDS': column2d['chartDS'],
 }
